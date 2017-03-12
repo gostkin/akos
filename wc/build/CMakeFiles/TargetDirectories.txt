@@ -1,0 +1,3 @@
+/home/gosktin/Documents/education/lab1/wc/build/CMakeFiles/rebuild_cache.dir
+/home/gosktin/Documents/education/lab1/wc/build/CMakeFiles/edit_cache.dir
+/home/gosktin/Documents/education/lab1/wc/build/CMakeFiles/wc.dir

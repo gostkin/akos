@@ -1,0 +1,1 @@
+/usr/bin/cc     CMakeFiles/cp.dir/main.c.o  -o cp 

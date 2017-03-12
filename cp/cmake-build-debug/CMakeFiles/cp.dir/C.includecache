@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/gosktin/Documents/education/lab1/cp/main.c
+dirent.h
+-
+getopt.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+
