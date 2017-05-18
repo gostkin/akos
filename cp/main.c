@@ -100,25 +100,43 @@ int do_copy(int n_files, char** file, char* destination, int recursive) {
                     new_dest[k + len_dest] = file[i][k];
                 }
 
-                FILE* old = fopen(file[i], "r");
-                FILE* new = fopen(new_dest, "w");
+                FILE* old = fopen(file[i], "rb");
+                FILE* new = fopen(new_dest, "wb");
 
-                char str[80];
-                while (fgets(str, sizeof(str), old) != NULL) {
-                    fputs(str, new);
+                struct stat statRes;
+                if(stat(file[i], &statRes) < 0)
+                    return 1;
+
+                mode_t bits = statRes.st_mode;
+
+                char str;
+                while(fread(&str, sizeof(str), 1, old) == 1){
+                    fwrite(&str, sizeof(str), 1, new);
                 }
+
                 fclose(old);
                 fclose(new);
+
+                chmod(new_dest, bits);
             } else {
-                FILE* old = fopen(file[i], "r");
-                FILE* new = fopen(destination, "w");
+                FILE* old = fopen(file[i], "rb");
+                FILE* new = fopen(destination, "wb");
 
-                char str[80];
-                while (fgets(str, sizeof(str), old) != NULL) {
-                    fputs(str, new);
+                struct stat statRes;
+                if(stat(file[i], &statRes) < 0)
+                    return 1;
+
+                mode_t bits = statRes.st_mode;
+
+                char str;
+                while(fread(&str, sizeof(str), 1, old) == 1){
+                    fwrite(&str, sizeof(str), 1, new);
                 }
+
                 fclose(old);
                 fclose(new);
+
+                chmod(destination, bits);
             }
         }
     }

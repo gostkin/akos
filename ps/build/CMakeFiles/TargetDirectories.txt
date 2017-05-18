@@ -1,3 +1,0 @@
-/home/gosktin/Documents/education/lab1/ps/build/CMakeFiles/rebuild_cache.dir
-/home/gosktin/Documents/education/lab1/ps/build/CMakeFiles/edit_cache.dir
-/home/gosktin/Documents/education/lab1/ps/build/CMakeFiles/ps.dir
